@@ -1,3 +1,68 @@
+# GnuCOBOL 3.3-dev
+
+This repo contains the sources of `gnucobol-code-r5651-branches-gnucobol-3.x' snapshot from the GnuCOBOL SVN repo as of 2026-02-27.
+Aligned to current IBM Enterprise COBOL behavior:
+
+- COMP-5 is not a real binary
+- changed some ibm-strict.conf flags
+
+***
+
+Rocky Linux 8 installation:
+
+- install the following packages:  gmp-devel ncurses-devel libdb-devel cjson-devel gettext-devel autoconf2.7x.noarch help2man
+
+- install `libxml2 2.14.x` from source.
+
+Then use the fresh libxml2 from above:
+
+    export AUTOCONF=/usr/bin/autoconf27
+    gettextize -f
+    autoreconf -B /usr/share/autoconf27 -fvi
+
+    export XML2_CONFIG=/usr/local/bin/xml2-config
+    ./configure
+
+***
+
+
+macOS installation:
+
+- install the following packages with brew: libxml2 libiconv ncurses gmp berkeley-db cjson
+
+- run the following commands:
+
+    gettextize -f
+    autoreconf -fvi
+
+- use the `gc33bdb_config.sh` script to run configure
+
+- run `make install` then source `gc33bdb-env.sh` and finally `make check`
+
+***
+
+
+RPi installation:
+
+- install the following packages: libgmp-dev libncurses-dev libdb-dev libcjson-dev bison flex
+    help2man texinfo autoconf automake libtool gettext
+
+- install `libxml2 2.14.x` from source
+
+Then run the following commands:
+
+    gettextize -f
+    autoreconv -fvi
+
+    ./configure
+
+
+
+**Good luck!**
+
+
+***
+
 [GnuCOBOL](https://www.gnu.org/software/gnucobol/) is a free
 COBOL compiler licensed under the GNU Public License (GPL).  
 It implements a substantial part of the COBOL 85,

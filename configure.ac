@@ -26,7 +26,8 @@ dnl
 #       just do a "make dist" on a modern system and get the tarball back
 #       to the ancient one... (which would likely also not have the necessary
 #       automake package either)
-AC_PREREQ([2.70])
+# note2: on Rocky Linux 8 using autoconf27 it fails
+dnl AC_PREREQ([2.70])
 
 AC_INIT([GnuCOBOL],
 	[3.3-dev],
