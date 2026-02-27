@@ -8,7 +8,11 @@ Aligned to current IBM Enterprise COBOL behavior:
 
 ***
 
-Rocky Linux 8 installation:
+Get libxml2 2.14.x from https://download.gnome.org/sources/libxml2/2.14/
+
+***
+
+## Rocky Linux 8 installation
 
 - install the following packages:  gmp-devel ncurses-devel libdb-devel cjson-devel gettext-devel autoconf2.7x.noarch help2man
 
@@ -20,13 +24,12 @@ Then use the fresh libxml2 from above:
     gettextize -f
     autoreconf -B /usr/share/autoconf27 -fvi
 
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
     export XML2_CONFIG=/usr/local/bin/xml2-config
     ./configure
 
-***
 
-
-macOS installation:
+## macOS installation
 
 - install the following packages with brew: libxml2 libiconv ncurses gmp berkeley-db cjson
 
@@ -37,25 +40,33 @@ macOS installation:
 
 - use the `gc33bdb_config.sh` script to run configure
 
-- run `make install` then source `gc33bdb-env.sh` and finally `make check`
+- run `make install` then source `gc33bdb-env-macos.sh` and finally `make check`
+
 
 ***
 
 
-RPi installation:
+## RPi installation
 
 - install the following packages: libgmp-dev libncurses-dev libdb-dev libcjson-dev bison flex
-    help2man texinfo autoconf automake libtool gettext
-
-- install `libxml2 2.14.x` from source
+    help2man texinfo autoconf automake autopoint libtool gettext
 
 Then run the following commands:
 
     gettextize -f
     autoreconv -fvi
 
+On Debian Trixie:
+
     ./configure
 
+On Debian Bookworm:
+
+- install `libxml2 2.14.x` from source
+
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+    export XML2_CONFIG=/usr/local/bin/xml2-config
+    ./configure --build=aarch64-linux-gnu
 
 
 **Good luck!**
