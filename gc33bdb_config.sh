@@ -20,4 +20,5 @@ export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib $LDFLAGS"
 # NOTE: include/libxml2 !!!
 export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include/libxml2 $CPPFLAGS"
 
+autoreconf -fvi
 ./configure --prefix=/opt/gc33bdb 2>&1 | tee myconfigure.log
