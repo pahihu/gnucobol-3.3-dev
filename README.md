@@ -1,6 +1,6 @@
 # GnuCOBOL 3.3-dev
 
-This repo contains the sources of `gnucobol-code-r5651-branches-gnucobol-3.x' snapshot from the GnuCOBOL SVN repo as of 2026-02-27.
+This repo contains the sources of `gnucobol-code-r5651-branches-gnucobol-3.x' snapshot from the GnuCOBOL SVN repo as of 2026-05-13.
 Aligned to current IBM Enterprise COBOL behavior:
 
 - COMP-5 is not a real binary
